@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+* {
+    margin:0;
+    padding:0;
+    transition:0.1s ease-in-out;
+}
+body {
+    background: url(gnome_wallpaper.jpg), #121212;
+    background-size:1920px 1080px;
+    background-position:center top;
+    color:white;
+    font-family:lato;
+    user-select: none;
+}
+nav, aside {
+    z-index:999;
+}
+
+nav {
+    width:100vw;
+    height:40px;
+    background: rgba(0,0,0,0.6);
+    top:0;
+    left:0;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:40px 40px 40px 0px;
+}
+.zegar {
+    height:80%;
+    text-align:center;
+    cursor:default;
+    display:flex;
+    align-items:center;
+    border-radius:20px;
+    user-select: none;
+}
+
+.zegar:hover {
+    background:rgba(255,255,255,0.15);
+}
+
+.zegar span {
+    font-size:17px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+aside {
+    height:calc(100vh - 40px);
+    width:60px;
+    background: rgba(0,0,0,0.6);
+    bottom:0;
+    display:flex;
+    position:fixed;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    border-radius:0px 0px 40px 40px;
+}
+
+aside input {
+    display:none;
+}
+
+.app input {
+    display:block;
+}
+
+aside label {
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+}
+
+aside label:hover {
+    background:rgba(255,255,255,0.15);
+}
+
+aside label img{
+    width:40px;
+    margin: 5px 0px;
+}
+
+.app {
+    display:block;
+    position:absolute;
+    width:0px;
+    height:0px;
+    top:0;
+    left:0px;
+    background:#090911;
+    opacity:0;
+    transition: 0.3s ease-in-out, 0.5s transform ease-in-out 0.2s;
+    box-shadow:0 0 5px black,
+    0 0 10px black,
+    0 0 15px black;
+    overflow-y:scroll;
+    transform:scale(0);
+}
+
+#firefox_app {
+    top:0px;
+}
+#vivaldi_app {
+    top:55px;
+}
+#nautilus_app {
+    top:110px;
+}
+#terminal_app {
+    top:165px;
+}
+#tweaks_app {
+    top:calc(55px * 4);
+}
+#obs_app {
+    top:calc(55px * 5);
+}
+#steam_app {
+    top:calc(55px * 6);
+}
+#discord_app {
+    top:calc(55px * 7);
+}
+#minecraft_app {
+    top:calc(55px * 8);
+}
+#lutris_app {
+    top:calc(55px * 9);
+}
+#visual_app {
+    top:calc(55px * 10);
+}  
+
+#firefox:checked ~ .firefox,
+#vivaldi:checked ~ .vivaldi,
+#nautilus:checked ~ .nautilus,
+#terminal:checked ~ .terminal,
+#tweaks:checked ~ .tweaks,
+#obs:checked ~ .obs,
+#steam:checked ~ .steam,
+#discord:checked ~ .discord,
+#minecraft:checked ~ .minecraft,
+#lutris:checked ~ .lutris,
+#visual:checked ~ .visual {
+    background:rgba(255,255,255,0.15);
+}
+
+
+#firefox:checked ~ .firefox #firefox_app,
+#vivaldi:checked ~ .vivaldi #vivaldi_app,
+#nautilus:checked ~ .nautilus #nautilus_app,
+#terminal:checked ~ .terminal #terminal_app,
+#tweaks:checked ~ .tweaks #tweaks_app,
+#obs:checked ~ .obs #obs_app,
+#steam:checked ~ .steam #steam_app,
+#discord:checked ~ .discord #discord_app,
+#minecraft:checked ~ .minecraft #minecraft_app,
+#lutris:checked ~ .lutris #lutris_app,
+#visual:checked ~ .visual #visual_app {
+    opacity:1;
+    width:calc(100vw - 60px);
+    height:calc(100vh - 40px);
+    bottom:0;
+    left:60px;
+    transform:scale(1);
+    top:0;
+}
+
+
+#firefox_app {
+    background:rgb(43, 42, 51);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+#firefox_app .logo {
+    display:flex;
+    align-items:center;
+}
+
+#firefox_app .logo img:nth-child(1) {
+    width:80px;
+}
+
+#firefox_app .logo img:nth-child(2) {
+    width:150px;
+    margin-left:20px;
+}
+
+#firefox_app .google {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    margin-top:-500px;
+}
+
+#firefox_app .google div {
+    display:flex;
+    align-items:center;
+    border:none;
+    background:#41414d;
+    width: 70vw;
+    height:50px;
+    border-radius:10px;
+}
+
+#firefox_app .google div input {
+    margin-left:30px;
+    border:none;
+    background:#41414d;
+    width: 100%;
+    height:50px;
+    border-radius:10px;
+    margin-left:50px;
+    font-size:16px;
+    color:white;
+    padding-left:50px;
+    margin-left:-10px;
+}
+
+#firefox_app .google div img {
+    position:absolute;
+    width:24px;
+}
+
+
+
+#vivaldi_app {
+    background:url(vivaldi-background.jpg);
+    background-size:150vw 100vh;
+    background-position:center;
+    flex-wrap:wrap;
+}
+
+#vivaldi_app .google {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+#vivaldi_app .google div {
+    display:flex;
+    align-items:center;
+    border:none;
+    background:#41414d;
+    width: 50vw;
+    height:40px;
+    border-radius:4px;
+}
+
+#vivaldi_app .google div input {
+    margin-left:30px;
+    border:none;
+    background:#080808;
+    width: 100%;
+    height:40px;
+    border-radius:4px;
+    margin-left:50px;
+    font-size:14px;
+    color:goldenrod;
+    margin-left:0px;
+    padding-left:40px;
+    transition: outline 0s;
+}
+
+#vivaldi_app .google div input:focus {
+    outline:yellow 2px solid;
+}
+
+#vivaldi_app .google div img {
+    position:absolute;
+    margin:10px;
+    width:20px;
+}
+
+#vivaldi_app .bookmarks {
+    width:90vw;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin: 0 auto;
+}
+#vivaldi_app .bookmarks .zakladka {
+    position:relative;
+    width:250px;
+    background:rgba(0,0,0,0.7);
+    margin: 20px;
+    height:100%;
+}
+
+#vivaldi_app .bookmarks .zakladka img {
+    width:100%;
+    margin-top:0px;
+}
+
+#vivaldi_app .bookmarks .zakladka p {
+    display:block;
+    text-align:center;
+    margin-top:-10px;
+    padding:5px;
+    color:goldenrod;
+    font-weight:bolder;
+}
