@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script type="text/javascript" src="script.js"></script>
 </head>
-<body onLoad="renderTime();">
+<body onLoad="move('okno');">
     <nav>
         <div class="zegar">
         <span id="data"></span>
@@ -113,7 +112,7 @@
                 <input type="radio" name="folder" id="snieg">
                 <input type="radio" name="folder" id="www32">
 
-                <div class="menu">
+                <div class="menu" id="menu">
                     <label for="html" class="labelhtml">html</label>
                     <label for="sprawdzian" class="labelsprawdzian">sprawdzian</label>
                     <label for="snieg" class="labelsnieg">snieg</label>
@@ -121,7 +120,7 @@
                     
                 </div>
 
-                <div class="glowne">
+                <div class="glowne" id="glowne">
                     <div class="element_glowny">
                         <img src="home_no.png" alt="">
                         <p>Home</p>
@@ -246,7 +245,30 @@
         <label for="terminal" class="terminal">
             <img src="terminal.svg" alt="">
             <div id="terminal_app" class="app">
-                
+                <div class="okno" id="okno">
+                    <h1>igor@HTML-Ubuntu: ~</h1>
+                    <div class="tresc">
+                        <hr>
+                        <span class="prefix">
+                            <span style="color:lime">
+                                igor@HTML-Ubuntu
+                            </span>
+
+                            <span>
+                                :
+                            </span>
+
+                            <span style="color:#6060c0">
+                                ~
+                            </span>
+
+                            <span>
+                                $
+                            </span>
+                        </span>
+                        <textarea name="message"></textarea>
+                    </div>
+                </div>
             </div>
         </label>
 
@@ -326,4 +348,84 @@
 
     </aside>
 </body>
+<script>
+    function renderTime(){
+
+// Data
+var mydate = new Date();
+var year = mydate.getYear();
+    if(year < 1000){
+        year +=1900
+    }
+var day = mydate.getDay();
+var month = mydate.getMonth();
+var daym = mydate.getDate();
+var dayarray = new Array("Niedziela","Sobota","Piątek","Czwartek","Środa","Wtorek","Poniedziałek")
+    var montharray = new Array("Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień")
+// Data koniec
+
+
+// Czas
+var currentTime = new Date();
+var h = currentTime.getHours();
+var m = currentTime.getMinutes();
+var s = currentTime.getSeconds();
+    if(h==24){
+        h=0;
+    } else if(h > 12){
+        h = h - 0;
+    }
+
+    if(h < 10){
+        h = "0" + h;
+    }
+    
+    if(m<10){
+        m= "0" + m;
+    }
+
+    if(s < 10){
+        s = "0" + s;
+    }
+
+    var Data = document.getElementById("data");
+    Data.textContent = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+    Data.innerText = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+
+    var Godzina = document.getElementById("godzina");
+    Godzina.textContent = "" + " " + " " +h+ ":" +m+ ":" +s;
+    Godzina.innerText = "" + " " + " " +h+ ":" +m+ ":" +s;
+
+
+
+    // + " " + " " +h+ ":" +m+ ":" +s
+    setTimeout("renderTime()", 1000);   
+}
+renderTime();
+
+
+// przeciagany terminal
+
+var DragValue;
+
+function move(id){
+var element = document.getElementById("okno");
+element.style.position = "absolute";
+element.onmousedown = function(){
+    DragValue = element;
+}
+}
+
+document.onmouseup = function(e){
+DragValue = null;
+}
+
+document.onmousemove = function(e){
+var posX = e.pageX - 200;
+var posY = e.pageY - 50;
+
+DragValue.style.left = (posX + "px");
+DragValue.style.top = (posY + "px");
+}
+</script>
 </html>
