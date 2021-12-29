@@ -274,11 +274,48 @@
 
 
 
-
+        <input type="radio" name="kategoria" id="ogolne">
+        <input type="radio" name="kategoria" id="wyglad">
+        <input type="radio" name="kategoria" id="czcionka">     
+          
         <label for="tweaks" class="tweaks">
             <img src="tweaks.png" alt="">
-            <div id="tweaks_app" class="app">
-                
+            <div id="tweaks_app" class="app"> 
+                <div class="sidebar">
+                    <div class="logo">
+                        <h1>Tweaks</h1>
+                    </div>
+
+                    <div class="kategorie">
+                        <label for="ogolne" class="ogolne">
+                            <b>Ogólne</b>
+                            <div class="tlo"></div>
+                        </label>
+                        <label for="wyglad" class="wyglad">
+                            <b>Wyglad</b>
+                            <div class="tlo"></div>
+                        </label>
+                        <label for="czcionka" class="czcionka">
+                            <b>Czcionka</b>
+                            <div class="tlo"></div>
+                        </label>
+                        
+                    </div>
+                </div>
+                                    <div class="tresc">
+                        <div class="ogolnekat kategoria">
+                            <div class="opcja">
+                                <h2>Animacje</h2>
+                            </div>
+                        </div>
+                        <div class="wygladkat kategoria">
+
+                        </div>
+                        <div class="czcionkakat kategoria">
+
+                        </div>
+                        
+                    </div>
             </div>
         </label>
 
@@ -360,7 +397,7 @@ var year = mydate.getYear();
 var day = mydate.getDay();
 var month = mydate.getMonth();
 var daym = mydate.getDate();
-var dayarray = new Array("Niedziela","Sobota","Piątek","Czwartek","Środa","Wtorek","Poniedziałek")
+var dayarray = new Array("Sobota","Piątek","Czwartek","Środa","Wtorek","Poniedziałek","Niedziela")
     var montharray = new Array("Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień")
 // Data koniec
 
