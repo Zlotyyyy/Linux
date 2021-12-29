@@ -419,7 +419,7 @@ aside label img:not(.app label img) {
 
 #nautilus_app .glowne .element_glowny:last-child p {
     background:#292929;
-    padding:10px 70px 10px 10px;
+    padding:10px 60px 10px 10px;
     color:#17f;
     text-shadow: 0 0 1px #17f,
     0 0 1px #17f,
@@ -444,9 +444,9 @@ aside label img:not(.app label img) {
 }
 
 #nautilus_app .menedzer .element {
-    width:80px;
-    height:80px;
-    margin:5px 0px 5px 40px;
+    width:70px;
+    height:70px;
+    margin:5px 40px 5px 0px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -454,7 +454,7 @@ aside label img:not(.app label img) {
 }
 
 #nautilus_app .menedzer .element img {
-    width:60px;
+    width:50px;
 }
 
 #nautilus_app .menedzer .element p {
