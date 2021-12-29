@@ -77,7 +77,7 @@ aside input {
     display:block;
 }
 
-aside label {
+aside label:not(.app label) {
     width:55px;
     height:55px;
     display:flex;
@@ -86,11 +86,11 @@ aside label {
     border-radius:50%;
 }
 
-aside label:hover {
+aside label:hover:not(.app label) {
     background:rgba(255,255,255,0.15);
 }
 
-aside label img{
+aside label img:not(.app label img) {
     width:40px;
     margin: 5px 0px;
 }
@@ -101,50 +101,52 @@ aside label img{
     width:0px;
     height:0px;
     top:0;
-    left:0px;
+    left:10px;
     background:#090911;
-    opacity:0;
-    transition: 0.3s ease-in-out, 0.5s transform ease-in-out 0.2s;
+    opacity:0.2;
+    transition: 0.3s ease-in-out, 0.3s transform ease-in-out 0.2s;
     box-shadow:0 0 5px black,
     0 0 10px black,
     0 0 15px black;
-    overflow-y:scroll;
     transform:scale(0);
     z-index:1;
+    border-radius:0px 0px 20px 20px;
+    overflow:hidden;
+    filter:blur(10px);
 }
 
 #firefox_app {
-    top:0px;
+    top:10px;
 }
 #vivaldi_app {
-    top:55px;
+    top:85px;
 }
 #nautilus_app {
-    top:110px;
+    top:140px;
 }
 #terminal_app {
-    top:165px;
+    top:195px;
 }
 #tweaks_app {
-    top:calc(55px * 4);
+    top:calc(55px * 4 + 30px);
 }
 #obs_app {
-    top:calc(55px * 5);
+    top:calc(55px * 5 + 30px);
 }
 #steam_app {
-    top:calc(55px * 6);
+    top:calc(55px * 6 + 30px);
 }
 #discord_app {
-    top:calc(55px * 7);
+    top:calc(55px * 7 + 30px);
 }
 #minecraft_app {
-    top:calc(55px * 8);
+    top:calc(55px * 8 + 30px);
 }
 #lutris_app {
-    top:calc(55px * 9);
+    top:calc(55px * 9 + 30px);
 }
 #visual_app {
-    top:calc(55px * 10);
+    top:calc(55px * 10 + 30px);
 }  
 
 #firefox:checked ~ .firefox,
@@ -158,7 +160,21 @@ aside label img{
 #minecraft:checked ~ .minecraft,
 #lutris:checked ~ .lutris,
 #visual:checked ~ .visual {
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.12);
+}
+
+#firefox:checked:hover ~ .firefox,
+#vivaldi:checked:hover ~ .vivaldi,
+#nautilus:checked:hover ~ .nautilus,
+#terminal:checked:hover ~ .terminal,
+#tweaks:checked:hover ~ .tweaks,
+#obs:checked:hover ~ .obs,
+#steam:checked:hover ~ .steam,
+#discord:checked:hover ~ .discord,
+#minecraft:checked:hover ~ .minecraft,
+#lutris:checked:hover ~ .lutris,
+#visual:checked:hover ~ .visual {
+    background:rgba(255,255,255,0.20);
 }
 
 
@@ -180,6 +196,7 @@ aside label img{
     left:60px;
     transform:scale(1);
     top:0px;
+    filter:blur(0px);
 }
 
 
@@ -235,6 +252,7 @@ aside label img{
     color:white;
     padding-left:50px;
     margin-left:-10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 #firefox_app .google div img {
@@ -249,6 +267,7 @@ aside label img{
     background-size:150vw 100vh;
     background-position:center;
     flex-wrap:wrap;
+    overflow-y:scroll;
 }
 
 #vivaldi_app .google {
@@ -323,3 +342,159 @@ aside label img{
     color:goldenrod;
     font-weight:bolder;
 }
+
+
+
+
+#nautilus_app {
+    background:#292929;
+}
+
+#nautilus_app .menu {
+    width:calc(100% - 20px);
+    height:5%;
+    top:0;
+    position:absolute;
+    margin-top:5px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+#nautilus_app .menu label {
+    padding:0 10px;
+    height:30px;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bolder;
+    margin: 0 20px;
+    border-radius:30px;
+    color:#17f;
+}
+
+#nautilus_app .menu label:not(:first-child) {
+    display:none;
+    transform:scale(0);
+}
+
+#nautilus_app .glowne {
+    height:calc(95% - 20px);
+    width: 200px;
+    background:rgba(50,70,120,0.24);
+    border-radius:15px;
+    margin:10px;
+    display:flex;
+    align-items:flex-start;
+    flex-direction: column;
+    flex-wrap:wrap;
+    position:absolute;
+    bottom:0;
+}
+
+#nautilus_app .glowne .element_glowny {
+    width:80%;
+    margin:0 auto;
+    margin-top:15px;
+    display:flex;
+    align-items:center;
+}
+
+#nautilus_app .glowne .element_glowny img {
+    float:left;
+    width:20px;
+    margin-right:10px;
+}
+
+#nautilus_app .glowne .element_glowny p {
+    font-size:15px;
+    font-weight:bolder;
+}
+
+#nautilus_app .glowne .element_glowny:last-child p {
+    background:#292929;
+    padding:10px 114px 10px 10px;
+    color:#17f;
+    text-shadow: 0 0 1px #17f,
+    0 0 1px #17f,
+    0 0 1px #17f,
+    0 0 1px #17f,
+    0 0 1px #17f,
+    0 0 1px #17f;
+    border-radius:50px 0px 0px 50px;
+}
+
+#nautilus_app input {
+    display:none;
+}
+
+#nautilus_app .menedzer {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:calc(100% - 200px);
+    height:93.6%;
+    display:none;
+}
+
+#nautilus_app .menedzer .element {
+    width:80px;
+    height:80px;
+    margin:5px 0px 5px 40px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    float:left;
+}
+
+#nautilus_app .menedzer .element img {
+    width:60px;
+}
+
+#nautilus_app .menedzer .element p {
+    word-wrap: normal;
+    margin-top:-5px;
+    font-weight:bolder;
+    text-align:center;
+}
+
+#sprawdzian:checked ~ .menu .labelsprawdzian,
+#snieg:checked ~ .menu .labelsnieg,
+#www32:checked ~ .menu .labelwww32 {
+    display:flex;
+    transform:scale(1);
+}
+#html:checked ~ .html,
+#sprawdzian:checked ~ .sprawdzian,
+#snieg:checked ~ .snieg,
+#www32:checked ~ .www32 {
+    display:block;
+}
+
+#sprawdzian:checked ~ .menu .labelhtml,
+#snieg:checked ~ .menu .labelhtml,
+#www32:checked ~ .menu .labelhtml {
+    background:none;
+    color:white;
+}
+
+#sprawdzian:checked ~ .glowne .element_glowny:last-child p,
+#snieg:checked ~ .glowne .element_glowny:last-child p,
+#www32:checked ~ .glowne .element_glowny:last-child p {
+    background:none;
+    padding:0px 0px 0px 0px;
+    color:white;
+    text-shadow: 0 0 0px white,
+    0 0 0px white,
+    0 0 0px white,
+    0 0 0px white,
+    0 0 0px white,
+    0 0 0px white;
+    border-radius:50px 0px 0px 50px;
+}
+
+.labelhtml:hover {
+    background:rgba(255,255,255,0.2) !important;
+}
+
