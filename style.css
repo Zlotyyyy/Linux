@@ -66,6 +66,7 @@ aside {
     align-items:center;
     justify-content:flex-start;
     border-radius:0px 0px 40px 40px;
+    top:40px;
 }
 
 aside input {
