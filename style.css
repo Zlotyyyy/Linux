@@ -211,6 +211,8 @@ aside label img:not(.app label img) {
 #firefox_app .logo {
     display:flex;
     align-items:center;
+    margin-top:-200px;
+
 }
 
 #firefox_app .logo img:nth-child(1) {
@@ -227,7 +229,7 @@ aside label img:not(.app label img) {
     justify-content:center;
     align-items:center;
     width:100%;
-    margin-top:-500px;
+    position:absolute;
 }
 
 #firefox_app .google div {
@@ -514,10 +516,12 @@ aside label img:not(.app label img) {
     background-size:100% 50px !important;
     background-repeat:no-repeat;
     background-position: top;
-    border-radius:20px;
+    border-radius:20px 20px 5px 5px;
     left:80px;
     transition:none;
     cursor:grab;
+    outline:solid 1px rgba(255,255,255,0.2);
+    overflow:hidden;
 }
 
 #terminal_app .okno:active {
@@ -571,4 +575,122 @@ aside label img:not(.app label img) {
 
 #terminal_app.okno  .tresc textarea:focus {
     outline:none;
+}
+
+
+
+
+
+#tweaks_app {
+    background:#121212;
+}
+
+#tweaks_app .sidebar {
+    height:100%;
+    width:150px;
+    background:#232323;
+}
+
+#tweaks_app .sidebar .logo {
+    width:calc(100% - 1px);
+    height:50px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#tweaks_app .sidebar .kategorie {
+    height:calc(100% - 51px);
+    width:149px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    border-right:1px solid rgba(255,255,255,0.2);
+}
+
+.kategorie label {
+    height:50px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    border-radius:0px 30px 30px 0px;
+    overflow:hidden;
+}
+
+.kategorie label b {
+    margin-left:10px;
+    z-index:1;
+}
+
+.kategorie label:hover {
+    background: rgba(255,255,255,0.3)
+}
+
+.kategorie label .tlo {
+    width:100%;
+    height:50px;
+    background:linear-gradient(90deg,transparent,rgba(0,30,95,0.3),rgba(0,30,95,0.3),transparent);
+    background-repeat:no-repeat;
+    background-size:0% 50px;
+    background-position:center;
+    position:absolute;
+    border-radius: 0px 30px 30px 0px;
+    transition: background-size 0.3s ease-in-out;
+}
+
+#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne,
+#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad,
+#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka {
+    background: rgba(50,70,120,0.24);
+}
+
+#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne .tlo,
+#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad .tlo,
+#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka .tlo {
+    background-size:200% 50px;
+}
+
+#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne b,
+#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad b,
+#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka b {
+    color:#17f;
+}
+/* #czcionka:checked ~ * {
+    display:none;
+} */
+
+#tweaks_app .tresc {
+    width:calc(100% - 150px);
+    height:100%;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background: #232323;
+}
+#tweaks_app .kategoria {
+    width:100%;
+    height:100%;
+}
+
+#tweaks_app .ogolnekat {
+    background:#321212;
+    display:none
+}
+
+#tweaks_app .wygladkat {
+    background:#123212;
+    display:none
+}
+
+#tweaks_app .czcionkakat {
+    background:#323212;
+    display:none;
+}
+
+#ogolne:checked ~ .tweaks .app .tresc .ogolnekat,
+#wyglad:checked ~ .tweaks .app .tresc .wygladkat,
+#czcionka:checked ~ .tweaks .app .tresc .czcionkakat  {
+    display: block;
 }
