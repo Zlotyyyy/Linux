@@ -498,3 +498,77 @@ aside label img:not(.app label img) {
     background:rgba(255,255,255,0.2) !important;
 }
 
+
+
+
+#terminal_app {
+    background:transparent;
+    box-shadow: none;
+    left:10px;    
+}
+
+#terminal_app .okno {
+    width:70vw !important;
+    height:70vh !important;
+    background:url(252525.png);
+    background-size:100% 50px !important;
+    background-repeat:no-repeat;
+    background-position: top;
+    border-radius:20px;
+    left:80px;
+    transition:none;
+    cursor:grab;
+}
+
+#terminal_app .okno:active {
+    cursor:grabbing;
+}
+
+#terminal_app .okno .tresc {
+    width:100%;
+    height:calc(100% - 50px);
+    position:absolute;
+    bottom:0;
+    left:0;
+    background: rgba(37,37,37,0.7);
+    overflow:scroll;
+}
+
+#terminal_app .okno .tresc hr {
+    height:1px;
+    border:none;
+    background: rgba(255,255,255,0.1);
+}
+
+#terminal_app .okno h1 {
+    line-height:50px;
+    text-align:center;
+    font-size:17px;
+    font-weight: bolder;
+}
+
+#terminal_app .okno .tresc span {
+    font-size:20px;
+}
+
+.prefix {
+    float:left;
+    margin-right:20px;
+}
+
+#terminal_app .okno .tresc textarea {
+    background:transparent;
+    border:none;
+    font-size:20px;
+    color:white;
+    margin-top:0px;
+    text-align: distribute;
+    line-height:20px;
+    padding-top:4px;
+    height:calc(100% - 50px);
+    width:100%;
+}
+
+#terminal_app.okno  .tresc textarea:focus {
+    outline:none;
+}
