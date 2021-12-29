@@ -430,9 +430,6 @@ var s = currentTime.getSeconds();
     Godzina.textContent = "" + " " + " " +h+ ":" +m+ ":" +s;
     Godzina.innerText = "" + " " + " " +h+ ":" +m+ ":" +s;
 
-
-
-    // + " " + " " +h+ ":" +m+ ":" +s
     setTimeout("renderTime()", 1000);   
 }
 renderTime();
@@ -455,11 +452,13 @@ DragValue = null;
 }
 
 document.onmousemove = function(e){
-var posX = e.pageX - 200;
-var posY = e.pageY - 50;
+var posX = e.pageX + "px";
+var posY = e.pageY - 70;
 
-DragValue.style.left = (posX + "px");
-DragValue.style.top = (posY + "px");
+var fposX = "calc(" + posX + " - " + 40 + "vw)";
+
+DragValue.style.left = fposX;
+DragValue.style.top = posY + "px";
 }
 </script>
 </html>
