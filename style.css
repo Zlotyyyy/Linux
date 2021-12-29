@@ -109,6 +109,7 @@ aside label img{
     0 0 15px black;
     overflow-y:scroll;
     transform:scale(0);
+    z-index:1;
 }
 
 #firefox_app {
