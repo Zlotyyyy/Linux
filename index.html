@@ -28,8 +28,15 @@
         <input type="radio" name="aplikacja" id="lutris">
         <input type="radio" name="aplikacja" id="visual">
 
+        <!-- Tweaks -->
 
+        <input type="checkbox" name="animacje" id="animacje" checked>
 
+        <input type="radio" name="ikony" id="maleikony">
+        <input type="radio" name="ikony" id="srednieikony" checked>
+        <input type="radio" name="ikony" id="duzeikony">
+        
+        <!-- /Tweaks -->
 
 
 
@@ -274,7 +281,7 @@
 
 
 
-        <input type="radio" name="kategoria" id="ogolne">
+        <input type="radio" name="kategoria" id="ogolne" checked>
         <input type="radio" name="kategoria" id="wyglad">
         <input type="radio" name="kategoria" id="czcionka">     
           
@@ -306,10 +313,33 @@
                         <div class="ogolnekat kategoria">
                             <div class="opcja">
                                 <h2>Animacje</h2>
+                                <label class="suwak" for="animacje">
+                                    <div class="kulka"></div>
+                                </label>
                             </div>
                         </div>
                         <div class="wygladkat kategoria">
+                            <div class="opcja">
+                                <h2>Ikony</h2>
+                                <div class="wybor">
+                                    <label for="maleikony" class="maleikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>małe ikony</b>
+                                    </label>
 
+                                    <label for="srednieikony" class="srednieikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>średnie ikony</b>
+                                    </label>
+
+                                    <label for="duzeikony" class="duzeikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>duże ikony</b>
+                                    </label>
+
+                                    
+                                </div>
+                            </div>
                         </div>
                         <div class="czcionkakat kategoria">
 
