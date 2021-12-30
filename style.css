@@ -742,6 +742,7 @@ aside label img:not(.app label img) {
 
 .wygladkat .opcja {
     display:block;
+    width:100%;
 }
 
 .wygladkat .opcja h2 {
