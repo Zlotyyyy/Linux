@@ -692,14 +692,14 @@ aside label img:not(.app label img) {
 }
 
 .kategoria .opcja {
-    width:100%;
+    width:100px;
     height:60px;
     display:flex;
     align-items:center;
-}
-
-.kategoria .opcja h2 {
-    margin-left: 20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    position:relative;
+    margin: 20px auto;
 }
 
 .kategoria .opcja .suwak {
@@ -707,8 +707,6 @@ aside label img:not(.app label img) {
     height:25px;
     background:#454545;
     border-radius:20px;
-    right:50px;
-    position:absolute;
     display:flex;
 }
 
@@ -759,6 +757,7 @@ aside label img:not(.app label img) {
     display:flex;
     align-items:center;
     justify-content:space-around;
+    flex-wrap:wrap;
 }
 
 .wygladkat .opcja .wybor label {
@@ -776,6 +775,11 @@ aside label img:not(.app label img) {
     transition: 0.3s cubic-bezier(0, 0, 0, 1);
     padding:5px;
     outline: 2px solid transparent;
+}
+
+.wybor label b {
+    text-align:center;
+    width:200px;
 }
 
 .maleikony img {
@@ -843,6 +847,7 @@ aside label img:not(.app label img) {
 
 .czcionkakat .opcja {
     display:block;
+    width:100%;
 }
 
 .czcionkakat .opcja h2 {
@@ -858,6 +863,7 @@ aside label img:not(.app label img) {
     display:flex;
     align-items:center;
     justify-content:space-around;
+    flex-wrap:wrap;
 }
 
 .wybor label h1 {
@@ -877,6 +883,7 @@ aside label img:not(.app label img) {
 .czcionkakat .opcja .wybor label {
     width:120px;
     height:100px;
+    margin-top:10px;
     display:flex;
     align-items:center;
     justify-content:center;
