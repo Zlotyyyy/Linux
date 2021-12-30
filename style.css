@@ -2,7 +2,7 @@
 * {
     margin:0;
     padding:0;
-    transition: 0.1s ease-in-out;
+
 }
 
 html, body {
@@ -57,9 +57,9 @@ nav {
 
 aside {
     height:calc(100vh - 40px);
-    width:60px;
     background: rgba(0,0,0,0.6);
     bottom:0;
+    width:60px;
     display:flex;
     position:fixed;
     flex-direction:column;
@@ -78,8 +78,6 @@ aside input {
 }
 
 aside label:not(.app label) {
-    width:55px;
-    height:55px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -95,6 +93,10 @@ aside label img:not(.app label img) {
     margin: 5px 0px;
 }
 
+#animacje:checked ~ label div {
+    transition: 0.3s ease-in-out, 0.3s transform ease-in-out 0.2s;
+}
+
 .app {
     display:block;
     position:absolute;
@@ -104,7 +106,6 @@ aside label img:not(.app label img) {
     left:10px;
     background:#090911;
     opacity:0.2;
-    transition: 0.3s ease-in-out, 0.3s transform ease-in-out 0.2s;
     box-shadow:0 0 5px black,
     0 0 10px black,
     0 0 15px black;
@@ -216,11 +217,11 @@ aside label img:not(.app label img) {
 }
 
 #firefox_app .logo img:nth-child(1) {
-    width:80px;
+    width:80px !important;
 }
 
 #firefox_app .logo img:nth-child(2) {
-    width:150px;
+    width:150px !important;
     margin-left:20px;
 }
 
@@ -313,7 +314,7 @@ aside label img:not(.app label img) {
 #vivaldi_app .google div img {
     position:absolute;
     margin:10px;
-    width:20px;
+    width:20px !important;
 }
 
 #vivaldi_app .bookmarks {
@@ -332,7 +333,7 @@ aside label img:not(.app label img) {
 }
 
 #vivaldi_app .bookmarks .zakladka img {
-    width:100%;
+    width:100% !important;
     margin-top:0px;
 }
 
@@ -410,7 +411,7 @@ aside label img:not(.app label img) {
 
 #nautilus_app .glowne .element_glowny img {
     float:left;
-    width:20px;
+    width:20px !important;
     margin-right:10px;
 }
 
@@ -430,6 +431,7 @@ aside label img:not(.app label img) {
     0 0 1px #17f,
     0 0 1px #17f;
     border-radius:50px 0px 0px 50px;
+    transition: 0.3s ease-in-out;
 }
 
 #nautilus_app input {
@@ -456,7 +458,7 @@ aside label img:not(.app label img) {
 }
 
 #nautilus_app .menedzer .element img {
-    width:50px;
+    width:50px !important;
 }
 
 #nautilus_app .menedzer .element p {
@@ -506,7 +508,7 @@ aside label img:not(.app label img) {
 #terminal_app {
     background:transparent;
     box-shadow: none;
-    left:10px;    
+    left:10px; 
 }
 
 #terminal_app .okno {
@@ -518,7 +520,7 @@ aside label img:not(.app label img) {
     background-position: top;
     border-radius:20px 20px 5px 5px;
     left:80px;
-    transition:none;
+    transition:none !important;
     cursor:grab;
     outline:solid 1px rgba(255,255,255,0.2);
     overflow:hidden;
@@ -657,9 +659,6 @@ aside label img:not(.app label img) {
 #czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka b {
     color:#17f;
 }
-/* #czcionka:checked ~ * {
-    display:none;
-} */
 
 #tweaks_app .tresc {
     width:calc(100% - 150px);
@@ -667,7 +666,7 @@ aside label img:not(.app label img) {
     position:absolute;
     bottom:0;
     right:0;
-    background: #232323;
+    background: #151515;
 }
 #tweaks_app .kategoria {
     width:100%;
@@ -675,17 +674,14 @@ aside label img:not(.app label img) {
 }
 
 #tweaks_app .ogolnekat {
-    background:#321212;
     display:none
 }
 
 #tweaks_app .wygladkat {
-    background:#123212;
     display:none
 }
 
 #tweaks_app .czcionkakat {
-    background:#323212;
     display:none;
 }
 
@@ -694,3 +690,153 @@ aside label img:not(.app label img) {
 #czcionka:checked ~ .tweaks .app .tresc .czcionkakat  {
     display: block;
 }
+
+.kategoria .opcja {
+    width:100%;
+    height:60px;
+    display:flex;
+    align-items:center;
+}
+
+.kategoria .opcja h2 {
+    margin-left: 20px;
+}
+
+.kategoria .opcja .suwak {
+    width:50px;
+    height:25px;
+    background:#454545;
+    border-radius:20px;
+    right:50px;
+    position:absolute;
+    display:flex;
+}
+
+.kategoria .opcja .suwak .kulka {
+    width:29px;
+    height:29px;
+    border-radius:50%;
+    background:#343434;
+    margin-top:-2px;
+}
+
+#animacje[type="checkbox"]:checked ~ .tweaks .app .tresc .ogolnekat .opcja .suwak .kulka {
+    margin-left:20px;
+    background:#17f;
+}
+
+#animacje[type="checkbox"]:checked ~ .tweaks .app .tresc .ogolnekat .opcja .suwak {
+    background:#05c
+}
+
+#animacje[type="checkbox"]:not(:checked) ~ input,
+#animacje[type="checkbox"]:not(:checked) ~ label,
+#animacje[type="checkbox"]:not(:checked) ~ div {
+    transition: 0.1s ease-in-out !important;
+}
+
+#animacje[type="checkbox"]:checked ~ input,
+#animacje[type="checkbox"]:checked ~ label,
+#animacje[type="checkbox"]:checked ~ div {
+    transition: 0s ease-in-out !important;
+}
+
+
+.wygladkat .opcja {
+    display:block;
+}
+
+.wygladkat .opcja h2 {
+    margin:0;
+    margin-top:20px;
+    text-align:center;
+}
+
+.wygladkat .opcja .wybor {
+    width:70%;
+    height:100px;
+    margin:20px auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.wygladkat .opcja .wybor label {
+    width:100px;
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.wybor label img {
+    border-radius:50%;
+    background:rgba(255,255,255,0);
+    transition: 0.3s cubic-bezier(0, 0, 0, 1);
+    padding:5px;
+    outline: 2px solid transparent;
+}
+
+.maleikony img {
+    width: 30px;
+    height:30px;
+}
+
+.srednieikony img {
+    width:40px;
+    height:40px;
+}
+
+.duzeikony img {
+    width:50px;
+    height:50px;
+}
+
+.wybor label:hover img {
+    background:rgba(255,255,255,0.3);
+}
+
+#maleikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .maleikony img, 
+#srednieikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .srednieikony img, 
+#duzeikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .duzeikony img {
+    outline: 2px solid #17f;
+}
+
+
+
+#maleikony:checked ~ label:not(.app label) {
+    width: 40px;
+    height: 40px;
+}
+
+#maleikony:checked ~ label img:not(.app label img) {
+    width: 30px;
+}
+
+
+
+
+#srednieikony:checked ~ label:not(.app label) {
+    width: 50px;
+    height: 50px;
+}
+
+#srednieikony:checked ~ label img:not(.app label img) {
+    width: 40px;
+}
+
+
+
+
+#duzeikony:checked ~ label:not(.app label) {
+    width: 60px;
+    height: 60px;
+}
+
+#duzeikony:checked ~ label img:not(.app label img) {
+    width:50px;
+}
+
+
+
