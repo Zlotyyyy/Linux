@@ -260,7 +260,7 @@ aside label img:not(.app label img) {
 
 #firefox_app .google div img {
     position:absolute;
-    width:24px;
+    width:24px !important;
 }
 
 
