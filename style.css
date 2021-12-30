@@ -1,842 +1,495 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-* {
-    margin:0;
-    padding:0;
-
-}
-
-html, body {
-    max-width:100vw;
-    max-height:100vh;
-    overflow:hidden;
-}
-
-body {
-    background: url(gnome_wallpaper.jpg), #121212;
-    background-size:1920px 1080px;
-    background-position:center top;
-    color:white;
-    font-family:lato;
-    user-select: none;
-}
-nav, aside {
-    z-index:999;
-}
-
-nav {
-    width:100vw;
-    height:40px;
-    background: rgba(0,0,0,0.6);
-    top:0;
-    left:0;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:40px 40px 40px 0px;
-}
-.zegar {
-    height:80%;
-    text-align:center;
-    cursor:default;
-    display:flex;
-    align-items:center;
-    border-radius:20px;
-    user-select: none;
-}
-
-.zegar:hover {
-    background:rgba(255,255,255,0.15);
-}
-
-.zegar span {
-    font-size:17px;
-    font-weight: bold;
-    margin: 0 10px;
-}
-
-aside {
-    height:calc(100vh - 40px);
-    background: rgba(0,0,0,0.6);
-    bottom:0;
-    width:60px;
-    display:flex;
-    position:fixed;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    border-radius:0px 0px 40px 40px;
-    top:40px;
-}
-
-aside input {
-    display:none;
-}
-
-.app input {
-    display:block;
-}
-
-aside label:not(.app label) {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-}
-
-aside label:hover:not(.app label) {
-    background:rgba(255,255,255,0.15);
-}
-
-aside label img:not(.app label img) {
-    width:40px;
-    margin: 5px 0px;
-}
-
-#animacje:checked ~ label div {
-    transition: 0.3s ease-in-out, 0.3s transform ease-in-out 0.2s;
-}
-
-.app {
-    display:block;
-    position:absolute;
-    width:0px;
-    height:0px;
-    top:0;
-    left:10px;
-    background:#090911;
-    opacity:0.2;
-    box-shadow:0 0 5px black,
-    0 0 10px black,
-    0 0 15px black;
-    transform:scale(0);
-    z-index:1;
-    border-radius:0px 0px 20px 20px;
-    overflow:hidden;
-    filter:blur(10px);
-}
-
-#firefox_app {
-    top:10px;
-}
-#vivaldi_app {
-    top:85px;
-}
-#nautilus_app {
-    top:140px;
-}
-#terminal_app {
-    top:195px;
-}
-#tweaks_app {
-    top:calc(55px * 4 + 30px);
-}
-#obs_app {
-    top:calc(55px * 5 + 30px);
-}
-#steam_app {
-    top:calc(55px * 6 + 30px);
-}
-#discord_app {
-    top:calc(55px * 7 + 30px);
-}
-#minecraft_app {
-    top:calc(55px * 8 + 30px);
-}
-#lutris_app {
-    top:calc(55px * 9 + 30px);
-}
-#visual_app {
-    top:calc(55px * 10 + 30px);
-}  
-
-#firefox:checked ~ .firefox,
-#vivaldi:checked ~ .vivaldi,
-#nautilus:checked ~ .nautilus,
-#terminal:checked ~ .terminal,
-#tweaks:checked ~ .tweaks,
-#obs:checked ~ .obs,
-#steam:checked ~ .steam,
-#discord:checked ~ .discord,
-#minecraft:checked ~ .minecraft,
-#lutris:checked ~ .lutris,
-#visual:checked ~ .visual {
-    background:rgba(255,255,255,0.12);
-}
-
-#firefox:checked:hover ~ .firefox,
-#vivaldi:checked:hover ~ .vivaldi,
-#nautilus:checked:hover ~ .nautilus,
-#terminal:checked:hover ~ .terminal,
-#tweaks:checked:hover ~ .tweaks,
-#obs:checked:hover ~ .obs,
-#steam:checked:hover ~ .steam,
-#discord:checked:hover ~ .discord,
-#minecraft:checked:hover ~ .minecraft,
-#lutris:checked:hover ~ .lutris,
-#visual:checked:hover ~ .visual {
-    background:rgba(255,255,255,0.20);
-}
-
-
-#firefox:checked ~ .firefox #firefox_app,
-#vivaldi:checked ~ .vivaldi #vivaldi_app,
-#nautilus:checked ~ .nautilus #nautilus_app,
-#terminal:checked ~ .terminal #terminal_app,
-#tweaks:checked ~ .tweaks #tweaks_app,
-#obs:checked ~ .obs #obs_app,
-#steam:checked ~ .steam #steam_app,
-#discord:checked ~ .discord #discord_app,
-#minecraft:checked ~ .minecraft #minecraft_app,
-#lutris:checked ~ .lutris #lutris_app,
-#visual:checked ~ .visual #visual_app {
-    opacity:1;
-    width:calc(100vw - 60px);
-    height:calc(100vh - 40px);
-    bottom:0;
-    left:60px;
-    transform:scale(1);
-    top:0px;
-    filter:blur(0px);
-}
-
-
-#firefox_app {
-    background:rgb(43, 42, 51);
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-#firefox_app .logo {
-    display:flex;
-    align-items:center;
-    margin-top:-200px;
-
-}
-
-#firefox_app .logo img:nth-child(1) {
-    width:80px !important;
-}
-
-#firefox_app .logo img:nth-child(2) {
-    width:150px !important;
-    margin-left:20px;
-}
-
-#firefox_app .google {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    position:absolute;
-}
-
-#firefox_app .google div {
-    display:flex;
-    align-items:center;
-    border:none;
-    background:#41414d;
-    width: 70vw;
-    height:50px;
-    border-radius:10px;
-}
-
-#firefox_app .google div input {
-    margin-left:30px;
-    border:none;
-    background:#41414d;
-    width: 100%;
-    height:50px;
-    border-radius:10px;
-    margin-left:50px;
-    font-size:16px;
-    color:white;
-    padding-left:50px;
-    margin-left:-10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
-
-#firefox_app .google div img {
-    position:absolute;
-    width:24px;
-}
-
-
-
-#vivaldi_app {
-    background:url(vivaldi-background.jpg);
-    background-size:150vw 100vh;
-    background-position:center;
-    flex-wrap:wrap;
-    overflow-y:scroll;
-}
-
-#vivaldi_app .google {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    margin-top:50px;
-    margin-bottom:50px;
-}
-
-#vivaldi_app .google div {
-    display:flex;
-    align-items:center;
-    border:none;
-    background:#41414d;
-    width: 50vw;
-    height:40px;
-    border-radius:4px;
-}
-
-#vivaldi_app .google div input {
-    margin-left:30px;
-    border:none;
-    background:#080808;
-    width: 100%;
-    height:40px;
-    border-radius:4px;
-    margin-left:50px;
-    font-size:14px;
-    color:goldenrod;
-    margin-left:0px;
-    padding-left:40px;
-    transition: outline 0s;
-}
-
-#vivaldi_app .google div input:focus {
-    outline:yellow 2px solid;
-}
-
-#vivaldi_app .google div img {
-    position:absolute;
-    margin:10px;
-    width:20px !important;
-}
-
-#vivaldi_app .bookmarks {
-    width:90vw;
-    display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    margin: 0 auto;
-}
-#vivaldi_app .bookmarks .zakladka {
-    position:relative;
-    width:250px;
-    background:rgba(0,0,0,0.7);
-    margin: 20px;
-    height:100%;
-}
-
-#vivaldi_app .bookmarks .zakladka img {
-    width:100% !important;
-    margin-top:0px;
-}
-
-#vivaldi_app .bookmarks .zakladka p {
-    display:block;
-    text-align:center;
-    margin-top:-10px;
-    padding:5px;
-    color:goldenrod;
-    font-weight:bolder;
-}
-
-
-
-
-#nautilus_app {
-    background:#292929;
-}
-
-#nautilus_app .menu {
-    width:calc(100% - 20px);
-    height:5%;
-    top:0;
-    position:absolute;
-    margin-top:5px;
-    display:flex;
-    flex-direction: row;
-    align-items:center;
-}
-
-#nautilus_app .menu label {
-    padding:0 10px;
-    height:30px;
-    background:rgba(255,255,255,0.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bolder;
-    margin: 0 20px;
-    border-radius:30px;
-    color:#17f;
-}
-
-#nautilus_app .menu label:not(:first-child) {
-    display:none;
-    transform:scale(0);
-}
-
-#nautilus_app .glowne {
-    height:calc(95% - 20px);
-    width: 140px;
-    background:rgba(50,70,120,0.24);
-    border-radius:15px;
-    margin:10px;
-    display:flex;
-    align-items:flex-start;
-    flex-direction: column;
-    flex-wrap:wrap;
-    position:absolute;
-    bottom:0;
-}
-
-#nautilus_app .glowne .element_glowny {
-    width:80%;
-    margin:0 auto;
-    margin-top:15px;
-    display:flex;
-    align-items:center;
-}
-
-#nautilus_app .glowne .element_glowny:hover p {
-    color:#17f !important;
-
-}
-
-#nautilus_app .glowne .element_glowny img {
-    float:left;
-    width:20px !important;
-    margin-right:10px;
-}
-
-#nautilus_app .glowne .element_glowny p {
-    font-size:15px;
-    font-weight:bolder;
-}
-
-#nautilus_app .glowne .element_glowny:last-child p {
-    background:#292929;
-    padding:10px 60px 10px 10px;
-    color:#17f;
-    text-shadow: 0 0 1px #17f,
-    0 0 1px #17f,
-    0 0 1px #17f,
-    0 0 1px #17f,
-    0 0 1px #17f,
-    0 0 1px #17f;
-    border-radius:50px 0px 0px 50px;
-    transition: 0.3s ease-in-out;
-}
-
-#nautilus_app input {
-    display:none;
-}
-
-#nautilus_app .menedzer {
-    position:absolute;
-    bottom:0;
-    right:0;
-    width:calc(100% - 200px);
-    height:93.6%;
-    display:none;
-}
-
-#nautilus_app .menedzer .element {
-    width:70px;
-    height:70px;
-    margin:5px 40px 5px 0px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    float:left;
-}
-
-#nautilus_app .menedzer .element img {
-    width:50px !important;
-}
-
-#nautilus_app .menedzer .element p {
-    word-wrap: normal;
-    margin-top:-5px;
-    font-weight:bolder;
-    text-align:center;
-}
-
-#sprawdzian:checked ~ .menu .labelsprawdzian,
-#snieg:checked ~ .menu .labelsnieg,
-#www32:checked ~ .menu .labelwww32 {
-    display:flex;
-    transform:scale(1);
-}
-#html:checked ~ .html,
-#sprawdzian:checked ~ .sprawdzian,
-#snieg:checked ~ .snieg,
-#www32:checked ~ .www32 {
-    display:block;
-}
-
-#sprawdzian:checked ~ .menu .labelhtml,
-#snieg:checked ~ .menu .labelhtml,
-#www32:checked ~ .menu .labelhtml {
-    background:none;
-    color:white;
-}
-
-#sprawdzian:checked ~ .glowne .element_glowny:last-child p,
-#snieg:checked ~ .glowne .element_glowny:last-child p,
-#www32:checked ~ .glowne .element_glowny:last-child p {
-    background:none;
-    padding:0px 0px 0px 0px;
-    color:white;
-    text-shadow: none;
-    border-radius:50px 0px 0px 50px;
-}
-
-.labelhtml:hover {
-    background:rgba(255,255,255,0.2) !important;
-}
-
-
-
-
-#terminal_app {
-    background:transparent;
-    box-shadow: none;
-    left:10px; 
-}
-
-#terminal_app .okno {
-    width:70vw !important;
-    height:70vh !important;
-    background:url(252525.png);
-    background-size:100% 50px !important;
-    background-repeat:no-repeat;
-    background-position: top;
-    border-radius:20px 20px 5px 5px;
-    left:80px;
-    transition:none !important;
-    cursor:grab;
-    outline:solid 1px rgba(255,255,255,0.2);
-    overflow:hidden;
-}
-
-#terminal_app .okno:active {
-    cursor:grabbing;
-}
-
-#terminal_app .okno .tresc {
-    width:100%;
-    height:calc(100% - 50px);
-    position:absolute;
-    bottom:0;
-    left:0;
-    background: rgba(37,37,37,0.7);
-    overflow:scroll;
-}
-
-#terminal_app .okno .tresc hr {
-    height:1px;
-    border:none;
-    background: rgba(255,255,255,0.1);
-}
-
-#terminal_app .okno h1 {
-    line-height:50px;
-    text-align:center;
-    font-size:17px;
-    font-weight: bolder;
-}
-
-#terminal_app .okno .tresc span {
-    font-size:20px;
-}
-
-.prefix {
-    float:left;
-    margin-right:20px;
-}
-
-#terminal_app .okno .tresc textarea {
-    background:transparent;
-    border:none;
-    font-size:20px;
-    color:white;
-    margin-top:0px;
-    text-align: distribute;
-    line-height:20px;
-    padding-top:4px;
-    height:calc(100% - 50px);
-    width:100%;
-}
-
-#terminal_app.okno  .tresc textarea:focus {
-    outline:none;
-}
-
-
-
-
-
-#tweaks_app {
-    background:#121212;
-}
-
-#tweaks_app .sidebar {
-    height:100%;
-    width:150px;
-    background:#232323;
-}
-
-#tweaks_app .sidebar .logo {
-    width:calc(100% - 1px);
-    height:50px;
-    border-right: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-#tweaks_app .sidebar .kategorie {
-    height:calc(100% - 51px);
-    width:149px;
-    position:absolute;
-    bottom:0;
-    left:0;
-    border-right:1px solid rgba(255,255,255,0.2);
-}
-
-.kategorie label {
-    height:50px;
-    width:100%;
-    display:flex;
-    align-items:center;
-    border-radius:0px 30px 30px 0px;
-    overflow:hidden;
-}
-
-.kategorie label b {
-    margin-left:10px;
-    z-index:1;
-}
-
-.kategorie label:hover {
-    background: rgba(255,255,255,0.3)
-}
-
-.kategorie label .tlo {
-    width:100%;
-    height:50px;
-    background:linear-gradient(90deg,transparent,rgba(0,30,95,0.3),rgba(0,30,95,0.3),transparent);
-    background-repeat:no-repeat;
-    background-size:0% 50px;
-    background-position:center;
-    position:absolute;
-    border-radius: 0px 30px 30px 0px;
-    transition: background-size 0.3s ease-in-out;
-}
-
-#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne,
-#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad,
-#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka {
-    background: rgba(50,70,120,0.24);
-}
-
-#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne .tlo,
-#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad .tlo,
-#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka .tlo {
-    background-size:200% 50px;
-}
-
-#ogolne:checked ~ .tweaks .app .sidebar .kategorie .ogolne b,
-#wyglad:checked ~ .tweaks .app .sidebar .kategorie .wyglad b,
-#czcionka:checked ~ .tweaks .app .sidebar .kategorie .czcionka b {
-    color:#17f;
-}
-
-#tweaks_app .tresc {
-    width:calc(100% - 150px);
-    height:100%;
-    position:absolute;
-    bottom:0;
-    right:0;
-    background: #151515;
-}
-#tweaks_app .kategoria {
-    width:100%;
-    height:100%;
-}
-
-#tweaks_app .ogolnekat {
-    display:none
-}
-
-#tweaks_app .wygladkat {
-    display:none
-}
-
-#tweaks_app .czcionkakat {
-    display:none;
-}
-
-#ogolne:checked ~ .tweaks .app .tresc .ogolnekat,
-#wyglad:checked ~ .tweaks .app .tresc .wygladkat,
-#czcionka:checked ~ .tweaks .app .tresc .czcionkakat  {
-    display: block;
-}
-
-.kategoria .opcja {
-    width:100%;
-    height:60px;
-    display:flex;
-    align-items:center;
-}
-
-.kategoria .opcja h2 {
-    margin-left: 20px;
-}
-
-.kategoria .opcja .suwak {
-    width:50px;
-    height:25px;
-    background:#454545;
-    border-radius:20px;
-    right:50px;
-    position:absolute;
-    display:flex;
-}
-
-.kategoria .opcja .suwak .kulka {
-    width:29px;
-    height:29px;
-    border-radius:50%;
-    background:#343434;
-    margin-top:-2px;
-}
-
-#animacje[type="checkbox"]:checked ~ .tweaks .app .tresc .ogolnekat .opcja .suwak .kulka {
-    margin-left:20px;
-    background:#17f;
-}
-
-#animacje[type="checkbox"]:checked ~ .tweaks .app .tresc .ogolnekat .opcja .suwak {
-    background:#05c
-}
-
-#animacje[type="checkbox"]:not(:checked) ~ input,
-#animacje[type="checkbox"]:not(:checked) ~ label,
-#animacje[type="checkbox"]:not(:checked) ~ div {
-    transition: 0.1s ease-in-out !important;
-}
-
-#animacje[type="checkbox"]:checked ~ input,
-#animacje[type="checkbox"]:checked ~ label,
-#animacje[type="checkbox"]:checked ~ div {
-    transition: 0s ease-in-out !important;
-}
-
-
-.wygladkat .opcja {
-    display:block;
-}
-
-.wygladkat .opcja h2 {
-    margin:0;
-    margin-top:20px;
-    text-align:center;
-}
-
-.wygladkat .opcja .wybor {
-    width:70%;
-    height:100px;
-    margin:20px auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-}
-
-.wygladkat .opcja .wybor label {
-    width:100px;
-    height:100px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.wybor label img {
-    border-radius:50%;
-    background:rgba(255,255,255,0);
-    transition: 0.3s cubic-bezier(0, 0, 0, 1);
-    padding:5px;
-    outline: 2px solid transparent;
-}
-
-.maleikony img {
-    width: 30px;
-    height:30px;
-}
-
-.srednieikony img {
-    width:40px;
-    height:40px;
-}
-
-.duzeikony img {
-    width:50px;
-    height:50px;
-}
-
-.wybor label:hover img {
-    background:rgba(255,255,255,0.3);
-}
-
-#maleikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .maleikony img, 
-#srednieikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .srednieikony img, 
-#duzeikony:checked ~ .tweaks .app .tresc .wygladkat .opcja .duzeikony img {
-    outline: 2px solid #17f;
-}
-
-
-
-#maleikony:checked ~ label:not(.app label) {
-    width: 40px;
-    height: 40px;
-}
-
-#maleikony:checked ~ label img:not(.app label img) {
-    width: 30px;
-}
-
-
-
-
-#srednieikony:checked ~ label:not(.app label) {
-    width: 50px;
-    height: 50px;
-}
-
-#srednieikony:checked ~ label img:not(.app label img) {
-    width: 40px;
-}
-
-
-
-
-#duzeikony:checked ~ label:not(.app label) {
-    width: 60px;
-    height: 60px;
-}
-
-#duzeikony:checked ~ label img:not(.app label img) {
-    width:50px;
-}
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Linux HTML-Untu</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body onLoad="move('okno');">
+    <nav>
+        <div class="zegar">
+        <span id="data"></span>
+        <span id="godzina"></span>
+        </div>
+    </nav>
+
+    <aside>
+        <input type="radio" name="aplikacja" id="firefox">
+        <input type="radio" name="aplikacja" id="vivaldi">
+        <input type="radio" name="aplikacja" id="nautilus">
+        <input type="radio" name="aplikacja" id="terminal">
+        <input type="radio" name="aplikacja" id="tweaks">
+        <input type="radio" name="aplikacja" id="obs">
+        <input type="radio" name="aplikacja" id="steam">
+        <input type="radio" name="aplikacja" id="discord">
+        <input type="radio" name="aplikacja" id="minecraft">
+        <input type="radio" name="aplikacja" id="lutris">
+        <input type="radio" name="aplikacja" id="visual">
+
+        <!-- Tweaks -->
+
+        <input type="checkbox" name="animacje" id="animacje" checked>
+
+        <input type="radio" name="ikony" id="maleikony">
+        <input type="radio" name="ikony" id="srednieikony" checked>
+        <input type="radio" name="ikony" id="duzeikony">
+        
+        <!-- /Tweaks -->
+
+
+
+
+
+        <label for="firefox" class="firefox">
+            <img src="firefox.svg" alt="">
+            <div id="firefox_app" class="app">
+                <div class="logo">
+                    <img src="firefox-logo.png" alt="">
+                    <img src="firefox-title.png" alt="">
+                </div>
+                <div class="google">
+                    <div>
+                        <img src="google-logo.png" alt="">
+                        <input type="text" placeholder="Search with Google or enter address">
+                    </div>
+                </div>
+            </div>
+        </label>
+
+
+
+        <label for="vivaldi" class="vivaldi">
+            <img src="vivaldi.svg" alt="">
+            <div id="vivaldi_app" class="app">
+                <div class="google">
+                    <div>
+                        <img src="google-logo.png" alt="">
+                        <input type="text" placeholder="Search Google">
+                    </div>
+                </div>
+                <div class="bookmarks">
+                    <div class="zakladka">
+                        <img src="booking.png" alt="">
+                        <p>Booking.com</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="youtube.png" alt=""><br>
+                        <p>Yotube</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="amazon.jpeg" alt=""><br>
+                        <p>Amazon</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="overstock.png" alt=""><br>
+                        <p>Overstock</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="hotels.jpeg" alt=""><br>
+                        <p>Hotels</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="aliexpress.jpg" alt=""><br>
+                        <p>AliExpress</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="disney.jpg" alt=""><br>
+                        <p>Disney+</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="accuweather.jpeg" alt=""><br>
+                        <p>AccuWeather</p>
+                    </div>
+                    <div class="zakladka">
+                        <img src="yahoo.jpg" alt=""><br>
+                        <p>Yahoo!</p>
+                    </div>
+                </div>
+            </div>
+        </label>
+
+        <label for="nautilus" class="nautilus">
+            <img src="nautilus.png" alt="">
+            <div id="nautilus_app" class="app">
+
+                <input type="radio" name="folder" id="html" checked>
+                <input type="radio" name="folder" id="sprawdzian">
+                <input type="radio" name="folder" id="snieg">
+                <input type="radio" name="folder" id="www32">
+
+                <div class="menu" id="menu">
+                    <label for="html" class="labelhtml">html</label>
+                    <label for="sprawdzian" class="labelsprawdzian">sprawdzian</label>
+                    <label for="snieg" class="labelsnieg">snieg</label>
+                    <label for="www32" class="labelwww32">www32</label>
+                    
+                </div>
+
+                <div class="glowne" id="glowne">
+                    <div class="element_glowny">
+                        <img src="home_no.png" alt="">
+                        <p>Home</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="documents-no.png" alt="">
+                        <p>Documents</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="downloads_no.png" alt="">
+                        <p>Downloads</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="music_no.png" alt="">
+                        <p>Music</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="pictures_no.png" alt="">
+                        <p>Pictures</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="videos_no.png" alt="">
+                        <p>Videos</p>
+                    </div>
+                    <div class="element_glowny">
+                        <img src="trash_no.png" alt="">
+                        <p>Trash</p>
+                    </div>
+                    <label for="html" class="element_glowny">
+                        <img src="folder.png" alt="">
+                        <p>html</p>
+                    </label>
+                </div>
+
+                <div class="menedzer html">
+
+                    <label class="element" for="sprawdzian">
+                        <img src="folder-big.png" alt="">
+                        <p>sprawdzian</p>
+                    </label>
+                    <label class="element" for="snieg">
+                        <img src="folder-big.png" alt="">
+                        <p>snieg</p>
+                    </label>
+                    <label class="element" for="www32">
+                        <img src="folder-big.png" alt="">
+                        <p>www32</p>
+                    </label>
+                    <div class="element">
+                        <img src="txt.png" alt="">
+                        <p>Niektóre elementy są interaktywne!</p>
+                    </div>
+
+                </div>
+
+                <div class="menedzer sprawdzian">
+
+                    <div class="element">
+                        <img src="html.png" alt="">
+                        <p>index.html</p>
+                    </div>
+
+                    <div class="element">
+                        <img src="sierpien.jpg" alt="">
+                        <p>sierpien.jpg</p>
+                    </div>
+
+                    <div class="element">
+                        <img src="css.png" alt="">
+                        <p>style.css</p>
+                    </div>
+                    <div class="element">
+                        <img src="tlo.png" alt="">
+                        <p>tlo.png</p>
+                    </div>
+                    
+                    
+                    
+                </div>
+
+                <div class="menedzer snieg">
+
+                    <div class="element">
+                        <img src="html.png" alt="">
+                        <p>index.html</p>
+                    </div>
+                    <div class="element">
+                        <img src="css.png" alt="">
+                        <p>style.css</p>
+                    </div>
+                </div>
+
+                <div class="menedzer www32">
+                    <div class="element">
+                        <img src="flaga.png" alt="">
+                        <p>flaga.png</p>
+                    </div>
+
+                    <div class="element">
+                        <img src="html.png" alt="">
+                        <p>index.html</p>
+                    </div>
+                    
+                    <div class="element">
+                        <img src="koloseum.jpg" alt="">
+                        <p>koloseum.jpg</p>
+                    </div>
+                    
+                    <div class="element">
+                        <img src="css.png" alt="">
+                        <p>style.png</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </label>
+
+
+
+
+        <label for="terminal" class="terminal">
+            <img src="terminal.svg" alt="">
+            <div id="terminal_app" class="app">
+                <div class="okno" id="okno">
+                    <h1>igor@HTML-Ubuntu: ~</h1>
+                    <div class="tresc">
+                        <hr>
+                        <span class="prefix">
+                            <span style="color:lime">
+                                igor@HTML-Ubuntu
+                            </span>
+
+                            <span>
+                                :
+                            </span>
+
+                            <span style="color:#6060c0">
+                                ~
+                            </span>
+
+                            <span>
+                                $
+                            </span>
+                        </span>
+                        <textarea name="message"></textarea>
+                    </div>
+                </div>
+            </div>
+        </label>
+
+
+
+        <input type="radio" name="kategoria" id="ogolne" checked>
+        <input type="radio" name="kategoria" id="wyglad">
+        <input type="radio" name="kategoria" id="czcionka">     
+          
+        <label for="tweaks" class="tweaks">
+            <img src="tweaks.png" alt="">
+            <div id="tweaks_app" class="app"> 
+                <div class="sidebar">
+                    <div class="logo">
+                        <h1>Tweaks</h1>
+                    </div>
+
+                    <div class="kategorie">
+                        <label for="ogolne" class="ogolne">
+                            <b>Ogólne</b>
+                            <div class="tlo"></div>
+                        </label>
+                        <label for="wyglad" class="wyglad">
+                            <b>Wyglad</b>
+                            <div class="tlo"></div>
+                        </label>
+                        <label for="czcionka" class="czcionka">
+                            <b>Czcionka</b>
+                            <div class="tlo"></div>
+                        </label>
+                        
+                    </div>
+                </div>
+                                    <div class="tresc">
+                        <div class="ogolnekat kategoria">
+                            <div class="opcja">
+                                <h2>Animacje</h2>
+                                <label class="suwak" for="animacje">
+                                    <div class="kulka"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="wygladkat kategoria">
+                            <div class="opcja">
+                                <h2>Ikony</h2>
+                                <div class="wybor">
+                                    <label for="maleikony" class="maleikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>małe ikony</b>
+                                    </label>
+
+                                    <label for="srednieikony" class="srednieikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>średnie ikony</b>
+                                    </label>
+
+                                    <label for="duzeikony" class="duzeikony">
+                                        <img src="tweaks.png" alt="">
+                                        <b>duże ikony</b>
+                                    </label>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="czcionkakat kategoria">
+
+                        </div>
+                        
+                    </div>
+            </div>
+        </label>
+
+
+
+
+        <label for="obs" class="obs">
+            <img src="obs.svg" alt="">
+            <div id="obs_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+        <label for="steam" class="steam">
+            <img src="steam.svg" alt="">
+            <div id="steam_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+
+        <label for="discord" class="discord">
+            <img src="discord.svg" alt="">
+            <div id="discord_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+        <label for="minecraft" class="minecraft">
+            <img src="minecraft-launcher.svg" alt="">
+            <div id="minecraft_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+        <label for="lutris" class="lutris">
+            <img src="lutris.svg" alt="">
+            <div id="lutris_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+        <label for="visual" class="visual">
+            <img src="visualstudiocode.png" alt="">
+            <div id="visual_app" class="app">
+                
+            </div>
+        </label>
+
+
+
+
+    </aside>
+</body>
+<script>
+    function renderTime(){
+
+// Data
+var mydate = new Date();
+var year = mydate.getFullYear();
+var day = mydate.getDay();
+var month = mydate.getMonth();
+var daym = mydate.getDate();
+var dayarray = new Array("Sobota","Piątek","Czwartek","Środa","Wtorek","Poniedziałek","Niedziela")
+    var montharray = new Array("Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień")
+// Data koniec
+
+
+// Czas
+var currentTime = new Date();
+var h = currentTime.getHours();
+var m = currentTime.getMinutes();
+var s = currentTime.getSeconds();
+    if(h==24){
+        h=0;
+    } else if(h > 12){
+        h = h - 0;
+    }
+
+    if(h < 10){
+        h = "0" + h;
+    }
+    
+    if(m<10){
+        m= "0" + m;
+    }
+
+    if(s < 10){
+        s = "0" + s;
+    }
+
+    var Data = document.getElementById("data");
+    Data.textContent = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+    Data.innerText = "" +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year;
+
+    var Godzina = document.getElementById("godzina");
+    Godzina.textContent = "" + " " + " " +h+ ":" +m+ ":" +s;
+    Godzina.innerText = "" + " " + " " +h+ ":" +m+ ":" +s;
+
+    setTimeout("renderTime()", 1000);   
+}
+renderTime();
+
+
+// przeciagany terminal
+
+var DragValue;
+
+function move(id){
+var element = document.getElementById("okno");
+element.style.position = "absolute";
+element.onmousedown = function(){
+    DragValue = element;
+}
+}
+
+document.onmouseup = function(e){
+DragValue = null;
+}
+
+document.onmousemove = function(e){
+var posX = e.pageX + "px";
+var posY = e.pageY - 70;
+
+var fposX = "calc(" + posX + " - " + 40 + "vw)";
+
+DragValue.style.left = fposX;
+DragValue.style.top = posY + "px";
+}
+</script>
+</html>
