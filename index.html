@@ -37,6 +37,12 @@
         <input type="radio" name="ikony" id="srednieikony" checked>
         <input type="radio" name="ikony" id="duzeikony">
         
+        <div class="fs"></div>
+
+        <input type="radio" name="czcionka" id="malaczcionka">
+        <input type="radio" name="czcionka" id="sredniaczcionka" checked>
+        <input type="radio" name="czcionka" id="duzaczcionka">
+        
         <!-- /Tweaks -->
 
 
@@ -337,13 +343,29 @@
                                         <img src="tweaks.png" alt="">
                                         <b>duże ikony</b>
                                     </label>
-
-                                    
                                 </div>
                             </div>
                         </div>
                         <div class="czcionkakat kategoria">
+                            <div class="opcja">
+                                <h2>Czcionka <br><span style="color:red;border-bottom:1px solid red;">Jeszcze nie działa :(</span></h2>
+                                <div class="wybor">
+                                    <label for="malaczcionka" class="malaczcionka">
+                                        <h1><p>A</p></h1>
+                                        <b>mała czcionka</b>
+                                    </label>
 
+                                    <label for="sredniaczcionka" class="sredniaczcionka">
+                                        <h1><p>A</p></h1>
+                                        <b>średnia czcionka</b>
+                                    </label>
+
+                                    <label for="duzaczcionka" class="duzaczcionka">
+                                        <h1><p>A</p></h1>
+                                        <b>duża czcionka</b>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
@@ -425,7 +447,7 @@ var year = mydate.getFullYear();
 var day = mydate.getDay();
 var month = mydate.getMonth();
 var daym = mydate.getDate();
-var dayarray = new Array("Sobota","Piątek","Czwartek","Środa","Wtorek","Poniedziałek","Niedziela")
+var dayarray = new Array("Niedziela","Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota")
     var montharray = new Array("Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień")
 // Data koniec
 
