@@ -203,29 +203,106 @@ aside label img:not(.app label img) {
 
 #firefox_app {
     background:rgb(43, 42, 51);
+}
+
+#firefox_app .menu {
+    width:100%;
+    height:50px;
+    background:rgb(33,32,41);
+    position:absolute;
+    top:0;
+    left:0;
     display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+#firefox_app .menu label {
+    width:30vw;
+    max-width:200px;
+    height:40px;
+    margin-left:5px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+#firefox_app .menu label img {
+    width:20px;
+    height:20px;
+    margin-left:10px;
+}
+
+#firefox_app .menu label span {
+    margin-left:10px;
+}
+
+.tresc {
+    position:absolute;
+    width:100%;
+    height:calc(100% - 50px);
+    right:0;
+    bottom:0;
+}
+
+#kartastronaglowna:checked ~ .firefox .app .tresc .stronaglowna,
+#kartasprawdzian:checked ~ .firefox .app .tresc .stronasprawdzian,
+#kartasnieg:checked ~ .firefox .app .tresc .stronasnieg,
+#kartawww32:checked ~ .firefox .app .tresc .stronawww32
+ {
+    display:flex;
+}
+
+#kartastronaglowna:checked ~ .firefox .app .menu .lstronaglowna,
+#kartasprawdzian:checked ~ .firefox .app .menu .lsprawdzian,
+#kartasnieg:checked ~ .firefox .app .menu .lsnieg,
+#kartawww32:checked ~ .firefox .app .menu .lwww32
+ {
+    background:rgba(255,255,255,0.2);
+}
+
+.menu label:hover {
+    background:rgba(255,255,255,0.1);
+}
+
+.strona {
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+.strona iframe {
+    border:none;
+    width:100%;
+    height:100%;
+}
+
+.stronaglowna {
+    width:100%;
+    height:100%;
     justify-content: center;
     align-items:center;
     flex-wrap:wrap;
 }
 
-#firefox_app .logo {
+.stronaglowna .logo {
     display:flex;
     align-items:center;
     margin-top:-200px;
 
 }
 
-#firefox_app .logo img:nth-child(1) {
+.stronaglowna .logo img:nth-child(1) {
     width:80px !important;
 }
 
-#firefox_app .logo img:nth-child(2) {
+.stronaglowna .logo img:nth-child(2) {
     width:150px !important;
     margin-left:20px;
 }
 
-#firefox_app .google {
+.stronaglowna .google {
     display:flex;
     justify-content:center;
     align-items:center;
@@ -233,7 +310,7 @@ aside label img:not(.app label img) {
     position:absolute;
 }
 
-#firefox_app .google div {
+.stronaglowna .google div {
     display:flex;
     align-items:center;
     border:none;
@@ -243,7 +320,7 @@ aside label img:not(.app label img) {
     border-radius:10px;
 }
 
-#firefox_app .google div input {
+.stronaglowna .google div input {
     margin-left:30px;
     border:none;
     background:#41414d;
@@ -258,7 +335,7 @@ aside label img:not(.app label img) {
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-#firefox_app .google div img {
+.stronaglowna .google div img {
     position:absolute;
     width:24px !important;
 }
@@ -457,11 +534,14 @@ aside label img:not(.app label img) {
     float:left;
 }
 
-#nautilus_app .menedzer .element img {
+
+#nautilus_app .menedzer .element img
+ {
     width:50px !important;
 }
 
-#nautilus_app .menedzer .element p {
+#nautilus_app .menedzer .element p
+ {
     word-wrap: normal;
     margin-top:-5px;
     font-weight:bolder;
