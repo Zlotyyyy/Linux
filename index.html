@@ -47,20 +47,58 @@
 
 
 
-
+        <input type="radio" name="strona" id="kartastronaglowna">
+        <input type="radio" name="strona" id="kartasprawdzian">
+        <input type="radio" name="strona" id="kartasnieg">
+        <input type="radio" name="strona" id="kartawww32">
+    
 
         <label for="firefox" class="firefox">
             <img src="firefox.svg" alt="">
             <div id="firefox_app" class="app">
-                <div class="logo">
-                    <img src="firefox-logo.png" alt="">
-                    <img src="firefox-title.png" alt="">
+                <div class="menu">
+                    <label class="lstronaglowna" for="kartastronaglowna">
+                        <img src="firefox-logo.png" alt="">
+                        <span>Strona główna</span>
+                    </label>
+                    <label class="lsprawdzian" for="kartasprawdzian">
+                        <span>Sprawdzian</span>
+                    </label>
+                    <label class="lsnieg" for="kartasnieg">
+                        <span>Śnieg z divów</span>
+                    </label>
+                    <label class="lwww32" for="kartawww32">
+                        <span>www32</span>
+                    </label>
+                    
+
                 </div>
-                <div class="google">
-                    <div>
-                        <img src="google-logo.png" alt="">
-                        <input type="text" placeholder="Search with Google or enter address">
+
+
+
+                <div class="tresc">
+                    <div class="strona stronaglowna">
+                        <div class="logo">
+                            <img src="firefox-logo.png" alt="">
+                            <img src="firefox-title.png" alt="">
+                        </div>
+                        <div class="google">
+                            <div>
+                                <img src="google-logo.png" alt="">
+                                <input type="text" placeholder="Search with Google or enter address">
+                            </div>
+                        </div>
                     </div>
+                    <div class="strona stronasprawdzian">
+                        <iframe src="https://igorsz-sprawdzian1.netlify.app"></iframe>
+                    </div>
+                    <div class="strona stronasnieg">
+                        <iframe src="https://igorsz-snieg.netlify.app"></iframe>
+                    </div>
+                    <div class="strona stronawww32">
+                        <iframe src="https://igorsz-www32.netlify.app"></iframe>
+                    </div>
+                    
                 </div>
             </div>
         </label>
@@ -191,11 +229,11 @@
                 </div>
 
                 <div class="menedzer sprawdzian">
-
-                    <div class="element">
-                        <img src="html.png" alt="">
-                        <p>index.html</p>
-                    </div>
+                    
+                    <label class="element" for="firefox">
+                            <img src="html.png" alt="">
+                            <p>index.html</p>
+                    </label>
 
                     <div class="element">
                         <img src="sierpien.jpg" alt="">
@@ -217,10 +255,10 @@
 
                 <div class="menedzer snieg">
 
-                    <div class="element">
+                    <label class="element" for="firefox">
                         <img src="html.png" alt="">
                         <p>index.html</p>
-                    </div>
+                    </label>
                     <div class="element">
                         <img src="css.png" alt="">
                         <p>style.css</p>
@@ -233,10 +271,10 @@
                         <p>flaga.png</p>
                     </div>
 
-                    <div class="element">
+                    <label class="element" for="firefox">
                         <img src="html.png" alt="">
                         <p>index.html</p>
-                    </div>
+                    </label>
                     
                     <div class="element">
                         <img src="koloseum.jpg" alt="">
