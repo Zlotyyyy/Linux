@@ -249,7 +249,8 @@ aside label img:not(.app label img) {
 #kartastronaglowna:checked ~ .firefox .app .tresc .stronaglowna,
 #kartasprawdzian:checked ~ .firefox .app .tresc .stronasprawdzian,
 #kartasnieg:checked ~ .firefox .app .tresc .stronasnieg,
-#kartawww32:checked ~ .firefox .app .tresc .stronawww32
+#kartawww32:checked ~ .firefox .app .tresc .stronawww32,
+#kartalinux:checked ~ .firefox .app .tresc .stronalinux
  {
     display:flex;
 }
@@ -257,7 +258,9 @@ aside label img:not(.app label img) {
 #kartastronaglowna:checked ~ .firefox .app .menu .lstronaglowna,
 #kartasprawdzian:checked ~ .firefox .app .menu .lsprawdzian,
 #kartasnieg:checked ~ .firefox .app .menu .lsnieg,
-#kartawww32:checked ~ .firefox .app .menu .lwww32
+#kartawww32:checked ~ .firefox .app .menu .lwww32,
+#kartalinux:checked ~ .firefox .app .menu .llinux
+
  {
     background:rgba(255,255,255,0.2);
 }
